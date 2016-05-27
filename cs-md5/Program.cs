@@ -3,10 +3,19 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
-using Map = System.Collections.Generic.Dictionary<string, string>;
+using System.Collections.Generic;
+using ISList = System.Collections.Generic.IList<string>;
+using ISet = System.Collections.Generic.ISet<string>;
+using ISMap = System.Collections.Generic.IDictionary<string, string>;
 
 namespace cs_md5 {
 	class Program {
+		
+		// types
+		interface IMap<T> : IDictionary<string, T> { }
+		interface IMap : IMap<object> { }
+
+
 		static void Main(string[] args) {
 			Map opt = GetOpt(args);
 			MD5 md5 = MD5.Create();
@@ -23,10 +32,11 @@ namespace cs_md5 {
 		}
 
 		// get command-line arguments as a map
-		private static Map ArgsMap(Map m, string[] args, Map name, Regex opt) {
+		private static IMap ArgsMap(IMap m, string[] args, IMap<string> key, IMap<int> type) {
 			for(int i=0; i<args.Length; i++) {
-				string k = name.ContainsKey(k=args[i]) ? name[k] : k;
-				string v = opt.Match(k).Length == k.Length ? args[++i] : "";
+				string k = key.ContainsKey(k=args[i]) ? key[k] : "";
+				int t = type.ContainsKey(k) ? type[k] : 0;
+				string v = 
 				m.Add(k, v);
 			}
 			return m;
