@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("omd5")]
-[assembly: AssemblyDescription("Calculate MD5 checksum for stdin or a file.")]
+[assembly: AssemblyTitle("ohash")]
+[assembly: AssemblyDescription("Calculate hash for stdin or a file.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Orez")]
-[assembly: AssemblyProduct("omd5")]
+[assembly: AssemblyProduct("ohash")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

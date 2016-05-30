@@ -1,4 +1,4 @@
-﻿namespace orez.md5 {
+﻿namespace orez.hash {
 	class oParams {
 
 		// data
@@ -7,7 +7,7 @@
 		/// </summary>
 		public string input = null;
 		/// <summary>
-		/// Optional. MD5 hash algorithm. Default is MD5.
+		/// Optional. Hash algorithm. Default is MD5.
 		/// </summary>
 		public string algo = "MD5";
 		/// <summary>

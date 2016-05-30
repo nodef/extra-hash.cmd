@@ -7,8 +7,8 @@
     <ProjectGuid>{3805BE77-E41E-4E55-8A48-B679D808E00E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>orez.md5</RootNamespace>
-    <AssemblyName>omd5</AssemblyName>
+    <RootNamespace>orez.hash</RootNamespace>
+    <AssemblyName>ohash</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

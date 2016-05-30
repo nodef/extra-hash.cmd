@@ -1,10 +1,10 @@
-﻿// OMD5 - calculate md5 checksum for stdin or a file
+﻿// OHASH - calculate hash for stdin or a file
 using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Collections.Generic;
 
-namespace orez.md5 {
+namespace orez.hash {
 	class Program {
 		
 		/// <summary>
@@ -14,12 +14,12 @@ namespace orez.md5 {
 		static void Main(string[] args) {
 			// get input parameters
 			oParams p = new oParams();
-			try { GetOpt(p, new string[] { "Program.cs" }); }
+			try { GetOpt(p, args); }
 			catch(Exception e) { Console.Error.WriteLine("e: "+e.Message); }
 			// calculate md5
-			MD5 md5 = MD5.Create(p.algo.ToUpper());
+			HashAlgorithm halgo = HashAlgorithm.Create(p.algo.ToUpper());
 			Stream inp = p.input != null ? File.OpenRead(p.input) : Console.OpenStandardInput();
-			string sout = BitConverter.ToString(md5.ComputeHash(inp)).ToLower();
+			string sout = BitConverter.ToString(halgo.ComputeHash(inp)).ToLower();
 			sout = p.spaced? sout : sout.Replace("-", "");
 			Console.WriteLine(sout);
 		}
