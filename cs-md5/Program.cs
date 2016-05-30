@@ -2,44 +2,50 @@
 using System;
 using System.IO;
 using System.Security.Cryptography;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
-using ISList = System.Collections.Generic.IList<string>;
-using ISet = System.Collections.Generic.ISet<string>;
-using ISMap = System.Collections.Generic.IDictionary<string, string>;
 
-namespace cs_md5 {
+namespace orez.md5 {
 	class Program {
 		
-		// types
-		interface IMap<T> : IDictionary<string, T> { }
-		interface IMap : IMap<object> { }
-
-
+		/// <summary>
+		/// The Begining of Everything.
+		/// </summary>
+		/// <param name="args">Input arguments.</param>
 		static void Main(string[] args) {
-			Map opt = GetOpt(args);
-			MD5 md5 = MD5.Create();
-			Stream stream = Console.OpenStandardInput();
-			string sout = BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", "").ToLower();
+			// get input parameters
+			oParams p = new oParams();
+			try { GetOpt(p, new string[] { "Program.cs" }); }
+			catch(Exception e) { Console.Error.WriteLine("e: "+e.Message); }
+			// calculate md5
+			MD5 md5 = MD5.Create(p.algo.ToUpper());
+			Stream inp = p.input != null ? File.OpenRead(p.input) : Console.OpenStandardInput();
+			string sout = BitConverter.ToString(md5.ComputeHash(inp)).ToLower();
+			sout = p.spaced? sout : sout.Replace("-", "");
 			Console.WriteLine(sout);
 		}
 
-		// get omd5 options
-		private static Map GetOpt(string[] args) {
-			Map name = new Map() {["--algo"]="-a"};
-			Regex opt = new Regex("-(a)", RegexOptions.IgnoreCase);
-			return ArgsMap(new Map(), args, name, opt);
-		}
-
-		// get command-line arguments as a map
-		private static IMap ArgsMap(IMap m, string[] args, IMap<string> key, IMap<int> type) {
-			for(int i=0; i<args.Length; i++) {
-				string k = key.ContainsKey(k=args[i]) ? key[k] : "";
-				int t = type.ContainsKey(k) ? type[k] : 0;
-				string v = 
-				m.Add(k, v);
+		/// <summary>
+		/// Get omd5 options.
+		/// </summary>
+		/// <param name="dst">destination oparams object.</param>
+		/// <param name="src">source arguments list.</param>
+		private static void GetOpt(oParams dst, IList<string> src) {
+			for(int i=0; i<src.Count; i++) {
+				switch(src[i]) {
+					case "-a":
+					case "--algo":
+						dst.algo = src[++i];
+						break;
+					case "-s":
+					case "--spaced":
+						dst.spaced = true;
+						break;
+					default:
+						if(!src[i].StartsWith("-")) dst.input = src[i];
+						else throw new InvalidDataException("invalid option \'"+src[i]+"\'");
+						break;
+				}
 			}
-			return m;
 		}
 	}
 }
