@@ -70,4 +70,6 @@ cat "star wars.mp4" | ohash -a SHA1
 
 ## license
 
+```batch
 Do you have a Poké ball? That's enough!
+```
