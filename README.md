@@ -1,5 +1,6 @@
 # ohash
 
+```batch
 Calculate hash for stdin or a file. A hash is like a signature for data, and
 thus is used to distingush different chunks of data (or files). This
 distinction can be:
@@ -20,14 +21,10 @@ that can be used to generate hash values:
 - MD5 (Merkle-Damgård 5) 128-bit hash function by Ronald Rivest.
 - RIPEMD160 (RACE Integrity Primitives Evaluation Message Digest) 160-bit hash
   function by Hans Dobbertin, Antoon Bosselaers and Bart Preneel.
-- SHA1 (Secure Hash Algorithm 1) 160-bit hash function by National Security
-  Agency.
-- SHA256 (Secure Hash Algorithm 2) 256-bit hash function by National Security
-  Agency.
-- SHA384 (Secure Hash Algorithm 2) 384-bit hash function by National Security
-  Agency.
-- SHA512 (Secure Hash Algorithm 2) 512-bit hash function by National Security
-  Agency.
+- SHA1 (Secure Hash Algorithm 1) 160-bit hash function by NSA.
+- SHA256 (Secure Hash Algorithm 2) 256-bit hash function by NSA.
+- SHA384 (Secure Hash Algorithm 2) 384-bit hash function by NSA.
+- SHA512 (Secure Hash Algorithm 2) 512-bit hash function by NSA.
 
 There exist a few others as well, but they are not currently accepted by this
 program. It is indeed quite surprising to see NSA's hash algorithms are being
@@ -35,16 +32,14 @@ used in several places despite the fact that, breaking security is what they
 do. Despite the fact that these algorithms are quite complex, hash algorithms
 can in principle be pretty simple like:
 
-```
-hash = Sum of all bytes in data
-```
+:: hash = Sum of all bytes in data
 
 As can be seen, such a hash value is always 1 byte, no matter what the size of
 the original data be. Thus by definition, this function is a hash function too!
 It is simple functions like these, that are used to create hash tables
 for accessing data by using any value as index of an array, in all programming
 languages. Go ahead and create your own!
-
+```
 
 ## usage
 
