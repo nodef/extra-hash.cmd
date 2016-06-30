@@ -1,9 +1,13 @@
 # ohash
 
+Calculate hash for stdin or a file in Windows Console. 
+
+
+## about
+
 ```batch
-Calculate hash for stdin or a file. A hash is like a signature for data, and
-thus is used to distingush different chunks of data (or files). This
-distinction can be:
+A hash is like a signature for data, and thus is used to distingush
+different chunks of data (or files). This distinction can be:
 
 - Space wise, say between 2 different files.
 - Time wise, say between the same file some time ago, and now.
