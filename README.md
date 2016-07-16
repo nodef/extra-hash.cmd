@@ -1,11 +1,10 @@
-# ohash
+ï»¿# ohash
 
 Calculate hash for stdin or a file in Windows Console. 
 
 
 ## about
 
-```batch
 A hash is like a signature for data, and thus is used to distingush
 different chunks of data (or files). This distinction can be:
 
@@ -22,7 +21,7 @@ There exist a few popular hash functions (yes, they are very similar to math
 functions used in class to generate an output value from multiple input values)
 that can be used to generate hash values:
 
-- MD5 (Merkle-Damgård 5) 128-bit hash function by Ronald Rivest.
+- MD5 (Merkle-DamgÃ¥rd 5) 128-bit hash function by Ronald Rivest.
 - RIPEMD160 (RACE Integrity Primitives Evaluation Message Digest) 160-bit hash
   function by Hans Dobbertin, Antoon Bosselaers and Bart Preneel.
 - SHA1 (Secure Hash Algorithm 1) 160-bit hash function by NSA.
@@ -43,7 +42,7 @@ the original data be. Thus by definition, this function is a hash function too!
 It is simple functions like these, that are used to create hash tables
 for accessing data by using any value as index of an array, in all programming
 languages. Go ahead and create your own!
-```
+
 
 ## usage
 
@@ -74,6 +73,4 @@ cat "star wars.mp4" | ohash -a SHA1
 
 ## license
 
-```batch
-Do you have a Poké ball? That's enough!
-```
+Do you have a PokÃ© ball? That's enough!
