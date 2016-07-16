@@ -3,16 +3,31 @@
 
 		// data
 		/// <summary>
-		/// Optional. Input file. Default is standard input.
+		/// Input file. Default is standard input.
 		/// </summary>
-		public string input = null;
+		public string Input;
 		/// <summary>
-		/// Optional. Hash algorithm. Default is MD5.
+		/// Hash algorithm. Default is MD5.
 		/// </summary>
-		public string algo = "MD5";
+		public string Algorithm;
 		/// <summary>
-		/// Optional. Spaced value. Default is false.
+		/// Spaced value. Default is false.
 		/// </summary>
-		public bool spaced = false;
+		public bool Spaced;
+
+
+		// constructor
+		/// <summary>
+		/// Get paramters from input arguments.
+		/// </summary>
+		/// <param name="args">Input arguments.</param>
+		public oParams(string[] args) {
+			for (int i = 0; i < args.Length; i++) {
+				string av = args[i];
+				if (av == "-a" || av == "--algorithm") Algorithm = ++i >= args.Length ? null : args[i];
+				else if (av == "-i" || av == "--input") Input = ++i > args.Length ? null : args[i];
+				else if (av == "-s" || av == "--spaced") Spaced = true;
+			}
+		}
 	}
 }

@@ -35,7 +35,7 @@ used in several places despite the fact that, breaking security is what they
 do. Despite the fact that these algorithms are quite complex, hash algorithms
 can in principle be pretty simple like:
 
-> hash = Sum of all bytes in data
+> hash = XOR of all bytes in data
 
 As can be seen, such a hash value is always 1 byte, no matter what the size of
 the original data be. Thus by definition, this function is a hash function too!
@@ -47,7 +47,7 @@ languages. Go ahead and create your own!
 ## usage
 
 ```batch
-ohash [-a/--algo <algorithm>] [-s/--spaced] [<input file>]
+> ohash [-a|--algorithm <algorithm>] [-s|--spaced] [-i|--input <input file>]
 
 :: [] -> optional argument
 :: <> -> argument value
@@ -55,19 +55,19 @@ ohash [-a/--algo <algorithm>] [-s/--spaced] [<input file>]
 
 ````batch
 :: get md5 hash of a ohash.exe
-ohash ohash.exe
+> ohash --input ohash.exe
 
 :: get md5 hash of a ohash.exe (alternate)
-cat ohash.exe | ohash
+> cat ohash.exe | ohash
 
 :: get sha256 hash of assignment.docx
-ohash -a SHA256 assignment.docx
+> ohash --algorithm SHA256 -i assignment.docx
 
 :: get ripemd160 hash of class notes.pdf
-ohash --algo RIPEMD160 "class notes.pdf"
+> ohash -a RIPEMD160 -i "class notes.pdf"
 
 :: get spaced sha1 hash of star wars.mp4
-cat "star wars.mp4" | ohash -a SHA1
+> cat "star wars.mp4" | ohash -a SHA1 --spaced
 ```
 
 
