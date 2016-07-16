@@ -35,7 +35,7 @@ used in several places despite the fact that, breaking security is what they
 do. Despite the fact that these algorithms are quite complex, hash algorithms
 can in principle be pretty simple like:
 
-:: hash = Sum of all bytes in data
+> hash = Sum of all bytes in data
 
 As can be seen, such a hash value is always 1 byte, no matter what the size of
 the original data be. Thus by definition, this function is a hash function too!
