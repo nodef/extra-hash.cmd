@@ -1,6 +1,6 @@
 ﻿# ohash
 
-Calculate hash for stdin or a file in Windows Console. 
+Calculate hash for stdin or a file in Windows Console.
 
 
 ## about
@@ -15,7 +15,7 @@ The resulting hash value is a number (usually very large) generated from the
 input data is designed such that very similar, but different data have
 completely different hash values, making them easily distinguishable by eye.
 To be clear, these hash values cannot be used to generate / extract the actual
-data, and are not useful without it. 
+data, and are not useful without it.
 
 There exist a few popular hash functions (yes, they are very similar to math
 functions used in class to generate an output value from multiple input values)
@@ -69,8 +69,3 @@ languages. Go ahead and create your own!
 :: get spaced sha1 hash of star wars.mp4
 > cat "star wars.mp4" | ohash -a SHA1 --spaced
 ```
-
-
-## license
-
-Do you have a Poké ball? That's enough!
