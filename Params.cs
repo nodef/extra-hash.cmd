@@ -1,5 +1,5 @@
-﻿namespace orez.hash {
-	class oParams {
+﻿namespace App {
+	class Params {
 
 		// data
 		/// <summary>
@@ -21,7 +21,7 @@
 		/// Get paramters from input arguments.
 		/// </summary>
 		/// <param name="args">Input arguments.</param>
-		public oParams(string[] args) {
+		public Params(string[] args) {
 			for (int i = 0; i < args.Length; i++) {
 				string av = args[i];
 				if (av == "-a" || av == "--algorithm") Algorithm = ++i >= args.Length ? null : args[i];

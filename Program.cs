@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace orez.hash {
+namespace App {
 	class Program {
 		
 		/// <summary>
@@ -10,7 +10,7 @@ namespace orez.hash {
 		/// </summary>
 		/// <param name="args">Input arguments.</param>
 		static void Main(string[] args) {
-			oParams p = new oParams(args);
+			Params p = new Params(args);
 			p.Algorithm = p.Algorithm == null ? "MD5" : p.Algorithm;
 			HashAlgorithm alg = HashAlgorithm.Create(p.Algorithm.ToUpper());
 			if (alg == null) { Console.Error.WriteLine("err: Invalid hash algorithm \"{0}\".", p.Algorithm); return; }

