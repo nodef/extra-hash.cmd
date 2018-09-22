@@ -70,3 +70,6 @@ languages. Go ahead and create your own!
 :: get spaced sha1 hash of star wars.mp4
 > cat "star wars.mp4" | ehash -a SHA1 --spaced
 ```
+
+
+[![Merferry](https://i.imgur.com/SCVpuPD.jpg)](https://merferry.github.io)
