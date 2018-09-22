@@ -1,5 +1,5 @@
 ﻿Calculate hash for stdin or a file in Windows Console.
-> 1. Download [exe file](https://raw.githubusercontent.com/winp/extra-bel/master/ecd.cmd).
+> 1. Download [exe file](https://github.com/winp/extra-hash/releases/download/1.0.0/ehash.exe).
 > 2. Copy to `C:\Program_Files\Scripts`.
 > 3. Add `C:\Program_Files\Scripts` to `PATH` environment variable.
 
