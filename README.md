@@ -54,7 +54,7 @@ languages. Go ahead and create your own!
 :: <> -> argument value
 ```
 
-````batch
+```batch
 :: get md5 hash of a ehash.exe
 > ehash --input ehash.exe
 
