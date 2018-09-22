@@ -1,5 +1,5 @@
 ﻿Calculate hash for stdin or a file in Windows Console.
-> 1. Download [exe file](https://github.com/winp/extra-hash/releases/download/1.0.0/ehash.exe).
+> 1. Download [exe file](https://github.com/cmdf/extra-hash/releases/download/1.0.0/ehash.exe).
 > 2. Copy to `C:\Program_Files\Scripts`.
 > 3. Add `C:\Program_Files\Scripts` to `PATH` environment variable.
 
@@ -72,4 +72,4 @@ languages. Go ahead and create your own!
 ```
 
 
-[![Merferry](https://i.imgur.com/SCVpuPD.jpg)](https://merferry.github.io)
+[![cmdf](https://i.imgur.com/SCVpuPD.jpg)](https://cmdf.github.io)
